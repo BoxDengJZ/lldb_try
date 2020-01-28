@@ -13,6 +13,39 @@
 
 <hr>
 
+
+这样使用 `nege`
+
+```
+
+(lldb) nege 0x104d1ab90
+Total offset: (0.0, 0.0)
+(CGRect) $17 = (origin = (x = 20, y = 12), size = (width = 51.5, height = 20.5))
+
+// 移动位置
+(lldb) nege -c 20 0 0x104d1ab90
+Total offset: (20.0, 0.0)
+(CGRect) $20 = (origin = (x = 40, y = 12), size = (width = 51.5, height = 20.5))
+
+// 撤销移动位置
+(lldb) nege 0x104d1ab90
+Total offset: (0.0, 0.0)
+(CGRect) $23 = (origin = (x = 20, y = 12), size = (width = 51.5, height = 20.5))
+
+// 移动位置
+(lldb) nege -c 20 0 
+Total offset: (20.0, 0.0)
+(CGRect) $25 = (origin = (x = 40, y = 12), size = (width = 51.5, height = 20.5))
+
+// 撤销移动位置
+(lldb) nege 
+Total offset: (0.0, 0.0)
+(CGRect) $27 = (origin = (x = 20, y = 12), size = (width = 51.5, height = 20.5))
+(lldb) 
+```
+
+<hr>
+
 # nege 大法三步走
 
 * 进入 lldb
